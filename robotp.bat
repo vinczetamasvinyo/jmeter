@@ -1,0 +1,1 @@
+robot -d C:/development/robot-scripts/stemx_uj_git/results/mlsz -T -v VAR:%1 C:/development/robot-scripts/stemx_uj_git/MLSZ/mlsz.robot

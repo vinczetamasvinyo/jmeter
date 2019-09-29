@@ -1,0 +1,3 @@
+FAIL_ElementClickInterceptedException: Message: element click intercepted: Element <button type="button" id="btnCheckout" class="button disabled small-expanded" data-toggle="" disabled="">...</button> is not clickable at point (1162, 547). Other element would receive the click: <div class="tabs-panel is-active" id="assignTab1" role="tabpanel" aria-labelledby="assignTab1-label">...</div>
+  (Session info: chrome=76.0.3809.100)
+_C:\development\robot-scripts\mlsz\Results\valami2\20192408_195607_160161__46816548301.html

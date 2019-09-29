@@ -1,0 +1,1470 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 3.1.2 (Python 3.6.2 on win32)" generated="20190824 19:47:14.856" rpa="false">
+<suite id="s1" name="Mlsz" source="C:\development\robot-scripts\mlsz\Tests\mlsz.robot">
+<test id="s1-t1" name="Valami">
+<kw name="Open browser1" type="setup">
+<arguments>
+<arg>${URL}</arg>
+<arg>${BONG}</arg>
+<arg>${BONGT}</arg>
+</arguments>
+<kw name="Log" library="BuiltIn">
+<doc>Logs the given message with the given level.</doc>
+<arguments>
+<arg>${url1}</arg>
+</arguments>
+<msg timestamp="20190824 19:47:15.200" level="INFO">https://mlszteszt.jegy.hu/program/magyarorszag-uruguay-1/2#test</msg>
+<status status="PASS" starttime="20190824 19:47:15.200" endtime="20190824 19:47:15.200"></status>
+</kw>
+<kw name="Log" library="BuiltIn">
+<doc>Logs the given message with the given level.</doc>
+<arguments>
+<arg>${bo}</arg>
+</arguments>
+<msg timestamp="20190824 19:47:15.200" level="INFO">chrome</msg>
+<status status="PASS" starttime="20190824 19:47:15.200" endtime="20190824 19:47:15.200"></status>
+</kw>
+<kw name="Log" library="BuiltIn">
+<doc>Logs the given message with the given level.</doc>
+<arguments>
+<arg>${bontype}</arg>
+</arguments>
+<msg timestamp="20190824 19:47:15.200" level="INFO">norm</msg>
+<status status="PASS" starttime="20190824 19:47:15.200" endtime="20190824 19:47:15.200"></status>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<arguments>
+<arg>"${bo}"=="chrome"</arg>
+<arg>Open chrome</arg>
+<arg>${url1}</arg>
+<arg>${bontype}</arg>
+</arguments>
+<kw name="Open chrome">
+<arguments>
+<arg>${url1}</arg>
+<arg>${bontype}</arg>
+</arguments>
+<kw name="Run Keyword If" library="BuiltIn">
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<arguments>
+<arg>"${chometype}"=="head"</arg>
+<arg>Chrome headless</arg>
+<arg>${url1}</arg>
+<arg>ELSE</arg>
+<arg>Chrome normal</arg>
+<arg>${url1}</arg>
+</arguments>
+<kw name="Chrome normal">
+<arguments>
+<arg>${url1}</arg>
+</arguments>
+<kw name="Open Browser" library="SeleniumLibrary">
+<doc>Opens a new browser instance to the given ``url``.</doc>
+<arguments>
+<arg>${URL}</arg>
+<arg>chrome</arg>
+</arguments>
+<msg timestamp="20190824 19:47:15.200" level="INFO">Opening browser 'chrome' to base url 'https://mlszteszt.jegy.hu/program/magyarorszag-uruguay-1/2#test'.</msg>
+<status status="PASS" starttime="20190824 19:47:15.200" endtime="20190824 19:47:20.772"></status>
+</kw>
+<kw name="Maximize Browser Window" library="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" starttime="20190824 19:47:20.772" endtime="20190824 19:47:21.931"></status>
+</kw>
+<status status="PASS" starttime="20190824 19:47:15.200" endtime="20190824 19:47:21.931"></status>
+</kw>
+<status status="PASS" starttime="20190824 19:47:15.200" endtime="20190824 19:47:21.935"></status>
+</kw>
+<status status="PASS" starttime="20190824 19:47:15.200" endtime="20190824 19:47:21.935"></status>
+</kw>
+<status status="PASS" starttime="20190824 19:47:15.200" endtime="20190824 19:47:21.935"></status>
+</kw>
+<status status="PASS" starttime="20190824 19:47:15.196" endtime="20190824 19:47:21.935"></status>
+</kw>
+<kw name="Wait the test sector selection visiable and finish the loading">
+<kw name="Wait the sector visiable" library="po_mlsz">
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<doc>Waits until element ``locator`` is visible.</doc>
+<arguments>
+<arg>${PO_MLSZ_SECTOR_ID}</arg>
+<arg>${TIMEOUT}</arg>
+</arguments>
+<status status="PASS" starttime="20190824 19:47:21.941" endtime="20190824 19:47:21.996"></status>
+</kw>
+<status status="PASS" starttime="20190824 19:47:21.940" endtime="20190824 19:47:21.996"></status>
+</kw>
+<kw name="Wait the sectors id loading">
+<kw name="Set Variable" library="BuiltIn">
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<arguments>
+<arg>0</arg>
+</arguments>
+<assign>
+<var>${i}</var>
+</assign>
+<msg timestamp="20190824 19:47:21.996" level="INFO">${i} = 0</msg>
+<status status="PASS" starttime="20190824 19:47:21.996" endtime="20190824 19:47:21.996"></status>
+</kw>
+<kw name="${i} IN RANGE [ ${timeout} ]" type="for">
+<kw name="${i} = 0" type="foritem">
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>50milliseconds</arg>
+</arguments>
+<msg timestamp="20190824 19:47:22.048" level="INFO">Slept 50 milliseconds</msg>
+<status status="PASS" starttime="20190824 19:47:21.996" endtime="20190824 19:47:22.048"></status>
+</kw>
+<kw name="Get Element Attribute" library="SeleniumLibrary">
+<doc>Returns value of ``attribute`` from element ``locator``.</doc>
+<arguments>
+<arg>id=testing-sectors</arg>
+<arg>data-loading</arg>
+</arguments>
+<assign>
+<var>${value}</var>
+</assign>
+<msg timestamp="20190824 19:47:22.080" level="INFO">${value} = true</msg>
+<status status="PASS" starttime="20190824 19:47:22.048" endtime="20190824 19:47:22.080"></status>
+</kw>
+<kw name="Exit For Loop If" library="BuiltIn">
+<doc>Stops executing the enclosing for loop if the ``condition`` is true.</doc>
+<arguments>
+<arg>"${value}"=="false"</arg>
+</arguments>
+<status status="PASS" starttime="20190824 19:47:22.080" endtime="20190824 19:47:22.080"></status>
+</kw>
+<status status="PASS" starttime="20190824 19:47:21.996" endtime="20190824 19:47:22.080"></status>
+</kw>
+<kw name="${i} = 1" type="foritem">
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>50milliseconds</arg>
+</arguments>
+<msg timestamp="20190824 19:47:22.136" level="INFO">Slept 50 milliseconds</msg>
+<status status="PASS" starttime="20190824 19:47:22.084" endtime="20190824 19:47:22.136"></status>
+</kw>
+<kw name="Get Element Attribute" library="SeleniumLibrary">
+<doc>Returns value of ``attribute`` from element ``locator``.</doc>
+<arguments>
+<arg>id=testing-sectors</arg>
+<arg>data-loading</arg>
+</arguments>
+<assign>
+<var>${value}</var>
+</assign>
+<msg timestamp="20190824 19:47:22.180" level="INFO">${value} = true</msg>
+<status status="PASS" starttime="20190824 19:47:22.136" endtime="20190824 19:47:22.180"></status>
+</kw>
+<kw name="Exit For Loop If" library="BuiltIn">
+<doc>Stops executing the enclosing for loop if the ``condition`` is true.</doc>
+<arguments>
+<arg>"${value}"=="false"</arg>
+</arguments>
+<status status="PASS" starttime="20190824 19:47:22.180" endtime="20190824 19:47:22.180"></status>
+</kw>
+<status status="PASS" starttime="20190824 19:47:22.080" endtime="20190824 19:47:22.180"></status>
+</kw>
+<kw name="${i} = 2" type="foritem">
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>50milliseconds</arg>
+</arguments>
+<msg timestamp="20190824 19:47:22.232" level="INFO">Slept 50 milliseconds</msg>
+<status status="PASS" starttime="20190824 19:47:22.180" endtime="20190824 19:47:22.232"></status>
+</kw>
+<kw name="Get Element Attribute" library="SeleniumLibrary">
+<doc>Returns value of ``attribute`` from element ``locator``.</doc>
+<arguments>
+<arg>id=testing-sectors</arg>
+<arg>data-loading</arg>
+</arguments>
+<assign>
+<var>${value}</var>
+</assign>
+<msg timestamp="20190824 19:47:22.252" level="INFO">${value} = true</msg>
+<status status="PASS" starttime="20190824 19:47:22.232" endtime="20190824 19:47:22.252"></status>
+</kw>
+<kw name="Exit For Loop If" library="BuiltIn">
+<doc>Stops executing the enclosing for loop if the ``condition`` is true.</doc>
+<arguments>
+<arg>"${value}"=="false"</arg>
+</arguments>
+<status status="PASS" starttime="20190824 19:47:22.252" endtime="20190824 19:47:22.252"></status>
+</kw>
+<status status="PASS" starttime="20190824 19:47:22.180" endtime="20190824 19:47:22.252"></status>
+</kw>
+<kw name="${i} = 3" type="foritem">
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>50milliseconds</arg>
+</arguments>
+<msg timestamp="20190824 19:47:22.304" level="INFO">Slept 50 milliseconds</msg>
+<status status="PASS" starttime="20190824 19:47:22.252" endtime="20190824 19:47:22.304"></status>
+</kw>
+<kw name="Get Element Attribute" library="SeleniumLibrary">
+<doc>Returns value of ``attribute`` from element ``locator``.</doc>
+<arguments>
+<arg>id=testing-sectors</arg>
+<arg>data-loading</arg>
+</arguments>
+<assign>
+<var>${value}</var>
+</assign>
+<msg timestamp="20190824 19:47:22.344" level="INFO">${value} = true</msg>
+<status status="PASS" starttime="20190824 19:47:22.304" endtime="20190824 19:47:22.344"></status>
+</kw>
+<kw name="Exit For Loop If" library="BuiltIn">
+<doc>Stops executing the enclosing for loop if the ``condition`` is true.</doc>
+<arguments>
+<arg>"${value}"=="false"</arg>
+</arguments>
+<status status="PASS" starttime="20190824 19:47:22.344" endtime="20190824 19:47:22.344"></status>
+</kw>
+<status status="PASS" starttime="20190824 19:47:22.252" endtime="20190824 19:47:22.344"></status>
+</kw>
+<kw name="${i} = 4" type="foritem">
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>50milliseconds</arg>
+</arguments>
+<msg timestamp="20190824 19:47:22.400" level="INFO">Slept 50 milliseconds</msg>
+<status status="PASS" starttime="20190824 19:47:22.344" endtime="20190824 19:47:22.400"></status>
+</kw>
+<kw name="Get Element Attribute" library="SeleniumLibrary">
+<doc>Returns value of ``attribute`` from element ``locator``.</doc>
+<arguments>
+<arg>id=testing-sectors</arg>
+<arg>data-loading</arg>
+</arguments>
+<assign>
+<var>${value}</var>
+</assign>
+<msg timestamp="20190824 19:47:22.423" level="INFO">${value} = true</msg>
+<status status="PASS" starttime="20190824 19:47:22.400" endtime="20190824 19:47:22.423"></status>
+</kw>
+<kw name="Exit For Loop If" library="BuiltIn">
+<doc>Stops executing the enclosing for loop if the ``condition`` is true.</doc>
+<arguments>
+<arg>"${value}"=="false"</arg>
+</arguments>
+<status status="PASS" starttime="20190824 19:47:22.427" endtime="20190824 19:47:22.427"></status>
+</kw>
+<status status="PASS" starttime="20190824 19:47:22.344" endtime="20190824 19:47:22.427"></status>
+</kw>
+<kw name="${i} = 5" type="foritem">
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>50milliseconds</arg>
+</arguments>
+<msg timestamp="20190824 19:47:22.479" level="INFO">Slept 50 milliseconds</msg>
+<status status="PASS" starttime="20190824 19:47:22.427" endtime="20190824 19:47:22.479"></status>
+</kw>
+<kw name="Get Element Attribute" library="SeleniumLibrary">
+<doc>Returns value of ``attribute`` from element ``locator``.</doc>
+<arguments>
+<arg>id=testing-sectors</arg>
+<arg>data-loading</arg>
+</arguments>
+<assign>
+<var>${value}</var>
+</assign>
+<msg timestamp="20190824 19:47:22.519" level="INFO">${value} = true</msg>
+<status status="PASS" starttime="20190824 19:47:22.479" endtime="20190824 19:47:22.519"></status>
+</kw>
+<kw name="Exit For Loop If" library="BuiltIn">
+<doc>Stops executing the enclosing for loop if the ``condition`` is true.</doc>
+<arguments>
+<arg>"${value}"=="false"</arg>
+</arguments>
+<status status="PASS" starttime="20190824 19:47:22.519" endtime="20190824 19:47:22.519"></status>
+</kw>
+<status status="PASS" starttime="20190824 19:47:22.427" endtime="20190824 19:47:22.519"></status>
+</kw>
+<kw name="${i} = 6" type="foritem">
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>50milliseconds</arg>
+</arguments>
+<msg timestamp="20190824 19:47:22.571" level="INFO">Slept 50 milliseconds</msg>
+<status status="PASS" starttime="20190824 19:47:22.519" endtime="20190824 19:47:22.571"></status>
+</kw>
+<kw name="Get Element Attribute" library="SeleniumLibrary">
+<doc>Returns value of ``attribute`` from element ``locator``.</doc>
+<arguments>
+<arg>id=testing-sectors</arg>
+<arg>data-loading</arg>
+</arguments>
+<assign>
+<var>${value}</var>
+</assign>
+<msg timestamp="20190824 19:47:22.647" level="INFO">${value} = false</msg>
+<status status="PASS" starttime="20190824 19:47:22.571" endtime="20190824 19:47:22.647"></status>
+</kw>
+<kw name="Exit For Loop If" library="BuiltIn">
+<doc>Stops executing the enclosing for loop if the ``condition`` is true.</doc>
+<arguments>
+<arg>"${value}"=="false"</arg>
+</arguments>
+<msg timestamp="20190824 19:47:22.651" level="INFO">Exiting for loop altogether.</msg>
+<status status="PASS" starttime="20190824 19:47:22.647" endtime="20190824 19:47:22.651"></status>
+</kw>
+<status status="PASS" starttime="20190824 19:47:22.519" endtime="20190824 19:47:22.651"></status>
+</kw>
+<status status="PASS" starttime="20190824 19:47:21.996" endtime="20190824 19:47:22.651"></status>
+</kw>
+<status status="PASS" starttime="20190824 19:47:21.996" endtime="20190824 19:47:22.651"></status>
+</kw>
+<kw name="Capture Page Screenshot" library="SeleniumLibrary">
+<doc>Takes screenshot of the current page and embeds it into log file.</doc>
+<msg timestamp="20190824 19:47:23.250" level="INFO" html="yes">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-1.png"&gt;&lt;img src="selenium-screenshot-1.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20190824 19:47:22.651" endtime="20190824 19:47:23.250"></status>
+</kw>
+<status status="PASS" starttime="20190824 19:47:21.938" endtime="20190824 19:47:23.250"></status>
+</kw>
+<kw name="Set the ticket number">
+<arguments>
+<arg>${TICKETNUMBER}</arg>
+</arguments>
+<assign>
+<var>${jegyek}</var>
+</assign>
+<kw name="Run Keyword If" library="BuiltIn">
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<arguments>
+<arg>"${tic_num}"=="random"</arg>
+<arg>Evaluate</arg>
+<arg>random.randint(1, 6)</arg>
+<arg>modules=random</arg>
+<arg>ELSE</arg>
+<arg>set variable</arg>
+<arg>${tic_num}</arg>
+</arguments>
+<assign>
+<var>${num}</var>
+</assign>
+<kw name="Set Variable" library="BuiltIn">
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<arguments>
+<arg>${tic_num}</arg>
+</arguments>
+<status status="PASS" starttime="20190824 19:47:23.254" endtime="20190824 19:47:23.254"></status>
+</kw>
+<msg timestamp="20190824 19:47:23.258" level="INFO">${num} = 1</msg>
+<status status="PASS" starttime="20190824 19:47:23.254" endtime="20190824 19:47:23.258"></status>
+</kw>
+<kw name="Log" library="BuiltIn">
+<doc>Logs the given message with the given level.</doc>
+<arguments>
+<arg>${num}</arg>
+</arguments>
+<msg timestamp="20190824 19:47:23.258" level="INFO">1</msg>
+<status status="PASS" starttime="20190824 19:47:23.258" endtime="20190824 19:47:23.258"></status>
+</kw>
+<msg timestamp="20190824 19:47:23.258" level="INFO">${jegyek} = 1</msg>
+<status status="PASS" starttime="20190824 19:47:23.254" endtime="20190824 19:47:23.258"></status>
+</kw>
+<kw name="Log" library="BuiltIn">
+<doc>Logs the given message with the given level.</doc>
+<arguments>
+<arg>${jegyek}</arg>
+</arguments>
+<msg timestamp="20190824 19:47:23.258" level="INFO">1</msg>
+<status status="PASS" starttime="20190824 19:47:23.258" endtime="20190824 19:47:23.258"></status>
+</kw>
+<kw name="Use the best selection">
+<arguments>
+<arg>${c_sec_type}</arg>
+<arg>${sec_id}</arg>
+<arg>${jegyek}</arg>
+</arguments>
+<kw name="Choose the sector and click">
+<arguments>
+<arg>${s_type}</arg>
+<arg>${s_id}</arg>
+</arguments>
+<kw name="Log" library="BuiltIn">
+<doc>Logs the given message with the given level.</doc>
+<arguments>
+<arg>${s_type}</arg>
+</arguments>
+<msg timestamp="20190824 19:47:23.262" level="INFO">no</msg>
+<status status="PASS" starttime="20190824 19:47:23.262" endtime="20190824 19:47:23.262"></status>
+</kw>
+<kw name="Log" library="BuiltIn">
+<doc>Logs the given message with the given level.</doc>
+<arguments>
+<arg>${sector_id2}</arg>
+</arguments>
+<msg timestamp="20190824 19:47:23.262" level="INFO">id=testing-sector-131</msg>
+<status status="PASS" starttime="20190824 19:47:23.262" endtime="20190824 19:47:23.262"></status>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<arguments>
+<arg>"${s_type}"=="random"</arg>
+<arg>Get random best sector from the list</arg>
+<arg>ELSE</arg>
+<arg>set variable</arg>
+<arg>${sector_id2}</arg>
+</arguments>
+<assign>
+<var>${sector_id}</var>
+</assign>
+<kw name="Set Variable" library="BuiltIn">
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<arguments>
+<arg>${sector_id2}</arg>
+</arguments>
+<status status="PASS" starttime="20190824 19:47:23.262" endtime="20190824 19:47:23.262"></status>
+</kw>
+<msg timestamp="20190824 19:47:23.262" level="INFO">${sector_id} = id=testing-sector-131</msg>
+<status status="PASS" starttime="20190824 19:47:23.262" endtime="20190824 19:47:23.262"></status>
+</kw>
+<kw name="Log" library="BuiltIn">
+<doc>Logs the given message with the given level.</doc>
+<arguments>
+<arg>${sector_id}</arg>
+</arguments>
+<msg timestamp="20190824 19:47:23.266" level="INFO">id=testing-sector-131</msg>
+<status status="PASS" starttime="20190824 19:47:23.262" endtime="20190824 19:47:23.266"></status>
+</kw>
+<kw name="Wait the sector id visiable" library="mlsz_resource">
+<arguments>
+<arg>${sector_id}</arg>
+</arguments>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<doc>Waits until element ``locator`` is visible.</doc>
+<arguments>
+<arg>${sec_id}</arg>
+<arg>${TIMEOUT}</arg>
+</arguments>
+<status status="PASS" starttime="20190824 19:47:23.266" endtime="20190824 19:47:23.306"></status>
+</kw>
+<status status="PASS" starttime="20190824 19:47:23.266" endtime="20190824 19:47:23.306"></status>
+</kw>
+<kw name="Click the sector id" library="mlsz_resource">
+<arguments>
+<arg>${sector_id}</arg>
+</arguments>
+<kw name="Click Element" library="SeleniumLibrary">
+<doc>Click element identified by ``locator``.</doc>
+<arguments>
+<arg>${sec_id}</arg>
+</arguments>
+<msg timestamp="20190824 19:47:23.306" level="INFO">Clicking element 'id=testing-sector-131'.</msg>
+<status status="PASS" starttime="20190824 19:47:23.306" endtime="20190824 19:47:23.434"></status>
+</kw>
+<status status="PASS" starttime="20190824 19:47:23.306" endtime="20190824 19:47:23.434"></status>
+</kw>
+<status status="PASS" starttime="20190824 19:47:23.262" endtime="20190824 19:47:23.434"></status>
+</kw>
+<kw name="Wait the best ticket visiable" library="po_mlsz">
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<doc>Waits until element ``locator`` is visible.</doc>
+<arguments>
+<arg>${PO_MLSZ_BEST_SELECTOR_ID}</arg>
+<arg>${TIMEOUT}</arg>
+</arguments>
+<status status="PASS" starttime="20190824 19:47:23.434" endtime="20190824 19:47:23.498"></status>
+</kw>
+<status status="PASS" starttime="20190824 19:47:23.434" endtime="20190824 19:47:23.498"></status>
+</kw>
+<kw name="Scrol to the best ticket selection" library="po_mlsz">
+<kw name="Scroll to element" library="mlsz_resource">
+<arguments>
+<arg>${PO_MLSZ_BEST_SELECTOR_ID}</arg>
+<arg>100</arg>
+</arguments>
+<kw name="Get Vertical Position" library="SeleniumLibrary">
+<doc>Returns vertical position of element identified by ``locator``.</doc>
+<arguments>
+<arg>${element}</arg>
+</arguments>
+<assign>
+<var>${x}</var>
+</assign>
+<msg timestamp="20190824 19:47:23.534" level="INFO">${x} = 357</msg>
+<status status="PASS" starttime="20190824 19:47:23.502" endtime="20190824 19:47:23.534"></status>
+</kw>
+<kw name="Windows Scroll" library="alap">
+<arguments>
+<arg>${x}</arg>
+<arg>${y}</arg>
+</arguments>
+<assign>
+<var>${x2}</var>
+</assign>
+<msg timestamp="20190824 19:47:23.534" level="INFO">${x2} = window.scrollTo(0,257)</msg>
+<status status="PASS" starttime="20190824 19:47:23.534" endtime="20190824 19:47:23.534"></status>
+</kw>
+<kw name="Log" library="BuiltIn">
+<doc>Logs the given message with the given level.</doc>
+<arguments>
+<arg>${x2}</arg>
+</arguments>
+<msg timestamp="20190824 19:47:23.534" level="INFO">window.scrollTo(0,257)</msg>
+<status status="PASS" starttime="20190824 19:47:23.534" endtime="20190824 19:47:23.534"></status>
+</kw>
+<kw name="Execute Javascript" library="SeleniumLibrary">
+<doc>Executes the given JavaScript code with possible arguments.</doc>
+<arguments>
+<arg>${x2}</arg>
+</arguments>
+<msg timestamp="20190824 19:47:23.538" level="INFO">Executing JavaScript:
+window.scrollTo(0,257)
+Without any arguments.</msg>
+<status status="PASS" starttime="20190824 19:47:23.534" endtime="20190824 19:47:23.554"></status>
+</kw>
+<status status="PASS" starttime="20190824 19:47:23.498" endtime="20190824 19:47:23.554"></status>
+</kw>
+<status status="PASS" starttime="20190824 19:47:23.498" endtime="20190824 19:47:23.554"></status>
+</kw>
+<kw name="Check the ticket price and choosse if necesarry">
+<doc>Megnézi, hogy mennyi jegykategória jelenik meg.</doc>
+<kw name="Get the number of tickets prices from the best selection" library="po_mlsz">
+<assign>
+<var>@{ticket_prices}</var>
+</assign>
+<kw name="Get WebElements" library="SeleniumLibrary">
+<doc>Returns list of WebElement objects matching the ``locator``.</doc>
+<arguments>
+<arg>${PO_MLSZ_TICKETS_PRICES_ID}</arg>
+</arguments>
+<assign>
+<var>${db}</var>
+</assign>
+<msg timestamp="20190824 19:47:23.606" level="INFO">${db} = [&lt;selenium.webdriver.remote.webelement.WebElement (session="31fd8ca4d76ad969f5d205972997d722", element="6b8b2adb-f2f6-4072-9041-a660b9d12492")&gt;]</msg>
+<status status="PASS" starttime="20190824 19:47:23.554" endtime="20190824 19:47:23.606"></status>
+</kw>
+<msg timestamp="20190824 19:47:23.606" level="INFO">@{ticket_prices} = [ &lt;selenium.webdriver.remote.webelement.WebElement (session="31fd8ca4d76ad969f5d205972997d722", element="6b8b2adb-f2f6-4072-9041-a660b9d12492")&gt; ]</msg>
+<status status="PASS" starttime="20190824 19:47:23.554" endtime="20190824 19:47:23.606"></status>
+</kw>
+<kw name="Get Length" library="BuiltIn">
+<doc>Returns and logs the length of the given item as an integer.</doc>
+<arguments>
+<arg>${ticket_prices}</arg>
+</arguments>
+<assign>
+<var>${hossz}</var>
+</assign>
+<msg timestamp="20190824 19:47:23.610" level="INFO">Length is 1</msg>
+<msg timestamp="20190824 19:47:23.610" level="INFO">${hossz} = 1</msg>
+<status status="PASS" starttime="20190824 19:47:23.610" endtime="20190824 19:47:23.610"></status>
+</kw>
+<kw name="Log" library="BuiltIn">
+<doc>Logs the given message with the given level.</doc>
+<arguments>
+<arg>${hossz}</arg>
+</arguments>
+<msg timestamp="20190824 19:47:23.610" level="INFO">1</msg>
+<status status="PASS" starttime="20190824 19:47:23.610" endtime="20190824 19:47:23.610"></status>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<arguments>
+<arg>${hossz} &gt; 1</arg>
+<arg>Click the random ticket price</arg>
+<arg>${ticket_prices}</arg>
+</arguments>
+<status status="PASS" starttime="20190824 19:47:23.610" endtime="20190824 19:47:23.610"></status>
+</kw>
+<status status="PASS" starttime="20190824 19:47:23.554" endtime="20190824 19:47:23.610"></status>
+</kw>
+<kw name="Click the ticket number on the best selection" library="po_mlsz">
+<arguments>
+<arg>${tic}</arg>
+</arguments>
+<kw name="Set Variable" library="BuiltIn">
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<arguments>
+<arg>xpath=//*[@for="ticketCount${jegy}"]</arg>
+</arguments>
+<assign>
+<var>${path}</var>
+</assign>
+<msg timestamp="20190824 19:47:23.614" level="INFO">${path} = xpath=//*[@for="ticketCount1"]</msg>
+<status status="PASS" starttime="20190824 19:47:23.614" endtime="20190824 19:47:23.614"></status>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<doc>Click element identified by ``locator``.</doc>
+<arguments>
+<arg>${path}</arg>
+</arguments>
+<msg timestamp="20190824 19:47:23.614" level="INFO">Clicking element 'xpath=//*[@for="ticketCount1"]'.</msg>
+<status status="PASS" starttime="20190824 19:47:23.614" endtime="20190824 19:47:23.838"></status>
+</kw>
+<status status="PASS" starttime="20190824 19:47:23.614" endtime="20190824 19:47:23.838"></status>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<doc>Waits until element ``locator`` is visible.</doc>
+<arguments>
+<arg>id=loading</arg>
+</arguments>
+<status status="PASS" starttime="20190824 19:47:23.838" endtime="20190824 19:47:23.949"></status>
+</kw>
+<kw name="Wait Until Element Is Not Visible" library="SeleniumLibrary">
+<doc>Waits until element ``locator`` is not visible.</doc>
+<arguments>
+<arg>id=loading</arg>
+<arg>10</arg>
+</arguments>
+<status status="PASS" starttime="20190824 19:47:23.949" endtime="20190824 19:47:24.736"></status>
+</kw>
+<kw name="check the error not visiable">
+<kw name="${i} IN RANGE [ ${timeout} ]" type="for">
+<kw name="${i} = 0" type="foritem">
+<kw name="Get Text" library="SeleniumLibrary">
+<doc>Returns the text value of element identified by ``locator``.</doc>
+<arguments>
+<arg>id=ui-id-1</arg>
+</arguments>
+<assign>
+<var>${szoveg}</var>
+</assign>
+<msg timestamp="20190824 19:47:24.812" level="INFO">${szoveg} = </msg>
+<status status="PASS" starttime="20190824 19:47:24.736" endtime="20190824 19:47:24.816"></status>
+</kw>
+<kw name="Should Be True" library="BuiltIn">
+<doc>Fails if the given condition is not true.</doc>
+<arguments>
+<arg>"${szoveg}"!="HIBA!"</arg>
+</arguments>
+<status status="PASS" starttime="20190824 19:47:24.816" endtime="20190824 19:47:24.816"></status>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>50milliseconds</arg>
+</arguments>
+<msg timestamp="20190824 19:47:24.868" level="INFO">Slept 50 milliseconds</msg>
+<status status="PASS" starttime="20190824 19:47:24.816" endtime="20190824 19:47:24.868"></status>
+</kw>
+<status status="PASS" starttime="20190824 19:47:24.736" endtime="20190824 19:47:24.868"></status>
+</kw>
+<kw name="${i} = 1" type="foritem">
+<kw name="Get Text" library="SeleniumLibrary">
+<doc>Returns the text value of element identified by ``locator``.</doc>
+<arguments>
+<arg>id=ui-id-1</arg>
+</arguments>
+<assign>
+<var>${szoveg}</var>
+</assign>
+<msg timestamp="20190824 19:47:24.900" level="INFO">${szoveg} = </msg>
+<status status="PASS" starttime="20190824 19:47:24.868" endtime="20190824 19:47:24.900"></status>
+</kw>
+<kw name="Should Be True" library="BuiltIn">
+<doc>Fails if the given condition is not true.</doc>
+<arguments>
+<arg>"${szoveg}"!="HIBA!"</arg>
+</arguments>
+<status status="PASS" starttime="20190824 19:47:24.900" endtime="20190824 19:47:24.904"></status>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>50milliseconds</arg>
+</arguments>
+<msg timestamp="20190824 19:47:24.956" level="INFO">Slept 50 milliseconds</msg>
+<status status="PASS" starttime="20190824 19:47:24.904" endtime="20190824 19:47:24.956"></status>
+</kw>
+<status status="PASS" starttime="20190824 19:47:24.868" endtime="20190824 19:47:24.956"></status>
+</kw>
+<kw name="${i} = 2" type="foritem">
+<kw name="Get Text" library="SeleniumLibrary">
+<doc>Returns the text value of element identified by ``locator``.</doc>
+<arguments>
+<arg>id=ui-id-1</arg>
+</arguments>
+<assign>
+<var>${szoveg}</var>
+</assign>
+<msg timestamp="20190824 19:47:25.000" level="INFO">${szoveg} = </msg>
+<status status="PASS" starttime="20190824 19:47:24.956" endtime="20190824 19:47:25.000"></status>
+</kw>
+<kw name="Should Be True" library="BuiltIn">
+<doc>Fails if the given condition is not true.</doc>
+<arguments>
+<arg>"${szoveg}"!="HIBA!"</arg>
+</arguments>
+<status status="PASS" starttime="20190824 19:47:25.000" endtime="20190824 19:47:25.004"></status>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>50milliseconds</arg>
+</arguments>
+<msg timestamp="20190824 19:47:25.056" level="INFO">Slept 50 milliseconds</msg>
+<status status="PASS" starttime="20190824 19:47:25.004" endtime="20190824 19:47:25.056"></status>
+</kw>
+<status status="PASS" starttime="20190824 19:47:24.956" endtime="20190824 19:47:25.056"></status>
+</kw>
+<kw name="${i} = 3" type="foritem">
+<kw name="Get Text" library="SeleniumLibrary">
+<doc>Returns the text value of element identified by ``locator``.</doc>
+<arguments>
+<arg>id=ui-id-1</arg>
+</arguments>
+<assign>
+<var>${szoveg}</var>
+</assign>
+<msg timestamp="20190824 19:47:25.092" level="INFO">${szoveg} = </msg>
+<status status="PASS" starttime="20190824 19:47:25.056" endtime="20190824 19:47:25.092"></status>
+</kw>
+<kw name="Should Be True" library="BuiltIn">
+<doc>Fails if the given condition is not true.</doc>
+<arguments>
+<arg>"${szoveg}"!="HIBA!"</arg>
+</arguments>
+<status status="PASS" starttime="20190824 19:47:25.092" endtime="20190824 19:47:25.092"></status>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>50milliseconds</arg>
+</arguments>
+<msg timestamp="20190824 19:47:25.144" level="INFO">Slept 50 milliseconds</msg>
+<status status="PASS" starttime="20190824 19:47:25.092" endtime="20190824 19:47:25.144"></status>
+</kw>
+<status status="PASS" starttime="20190824 19:47:25.056" endtime="20190824 19:47:25.144"></status>
+</kw>
+<kw name="${i} = 4" type="foritem">
+<kw name="Get Text" library="SeleniumLibrary">
+<doc>Returns the text value of element identified by ``locator``.</doc>
+<arguments>
+<arg>id=ui-id-1</arg>
+</arguments>
+<assign>
+<var>${szoveg}</var>
+</assign>
+<msg timestamp="20190824 19:47:25.164" level="INFO">${szoveg} = </msg>
+<status status="PASS" starttime="20190824 19:47:25.144" endtime="20190824 19:47:25.164"></status>
+</kw>
+<kw name="Should Be True" library="BuiltIn">
+<doc>Fails if the given condition is not true.</doc>
+<arguments>
+<arg>"${szoveg}"!="HIBA!"</arg>
+</arguments>
+<status status="PASS" starttime="20190824 19:47:25.164" endtime="20190824 19:47:25.164"></status>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>50milliseconds</arg>
+</arguments>
+<msg timestamp="20190824 19:47:25.216" level="INFO">Slept 50 milliseconds</msg>
+<status status="PASS" starttime="20190824 19:47:25.164" endtime="20190824 19:47:25.216"></status>
+</kw>
+<status status="PASS" starttime="20190824 19:47:25.144" endtime="20190824 19:47:25.216"></status>
+</kw>
+<kw name="${i} = 5" type="foritem">
+<kw name="Get Text" library="SeleniumLibrary">
+<doc>Returns the text value of element identified by ``locator``.</doc>
+<arguments>
+<arg>id=ui-id-1</arg>
+</arguments>
+<assign>
+<var>${szoveg}</var>
+</assign>
+<msg timestamp="20190824 19:47:25.240" level="INFO">${szoveg} = </msg>
+<status status="PASS" starttime="20190824 19:47:25.216" endtime="20190824 19:47:25.240"></status>
+</kw>
+<kw name="Should Be True" library="BuiltIn">
+<doc>Fails if the given condition is not true.</doc>
+<arguments>
+<arg>"${szoveg}"!="HIBA!"</arg>
+</arguments>
+<status status="PASS" starttime="20190824 19:47:25.240" endtime="20190824 19:47:25.240"></status>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>50milliseconds</arg>
+</arguments>
+<msg timestamp="20190824 19:47:25.292" level="INFO">Slept 50 milliseconds</msg>
+<status status="PASS" starttime="20190824 19:47:25.240" endtime="20190824 19:47:25.292"></status>
+</kw>
+<status status="PASS" starttime="20190824 19:47:25.216" endtime="20190824 19:47:25.292"></status>
+</kw>
+<kw name="${i} = 6" type="foritem">
+<kw name="Get Text" library="SeleniumLibrary">
+<doc>Returns the text value of element identified by ``locator``.</doc>
+<arguments>
+<arg>id=ui-id-1</arg>
+</arguments>
+<assign>
+<var>${szoveg}</var>
+</assign>
+<msg timestamp="20190824 19:47:25.312" level="INFO">${szoveg} = </msg>
+<status status="PASS" starttime="20190824 19:47:25.292" endtime="20190824 19:47:25.312"></status>
+</kw>
+<kw name="Should Be True" library="BuiltIn">
+<doc>Fails if the given condition is not true.</doc>
+<arguments>
+<arg>"${szoveg}"!="HIBA!"</arg>
+</arguments>
+<status status="PASS" starttime="20190824 19:47:25.312" endtime="20190824 19:47:25.316"></status>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>50milliseconds</arg>
+</arguments>
+<msg timestamp="20190824 19:47:25.367" level="INFO">Slept 50 milliseconds</msg>
+<status status="PASS" starttime="20190824 19:47:25.316" endtime="20190824 19:47:25.367"></status>
+</kw>
+<status status="PASS" starttime="20190824 19:47:25.292" endtime="20190824 19:47:25.367"></status>
+</kw>
+<kw name="${i} = 7" type="foritem">
+<kw name="Get Text" library="SeleniumLibrary">
+<doc>Returns the text value of element identified by ``locator``.</doc>
+<arguments>
+<arg>id=ui-id-1</arg>
+</arguments>
+<assign>
+<var>${szoveg}</var>
+</assign>
+<msg timestamp="20190824 19:47:25.387" level="INFO">${szoveg} = </msg>
+<status status="PASS" starttime="20190824 19:47:25.367" endtime="20190824 19:47:25.387"></status>
+</kw>
+<kw name="Should Be True" library="BuiltIn">
+<doc>Fails if the given condition is not true.</doc>
+<arguments>
+<arg>"${szoveg}"!="HIBA!"</arg>
+</arguments>
+<status status="PASS" starttime="20190824 19:47:25.387" endtime="20190824 19:47:25.387"></status>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>50milliseconds</arg>
+</arguments>
+<msg timestamp="20190824 19:47:25.439" level="INFO">Slept 50 milliseconds</msg>
+<status status="PASS" starttime="20190824 19:47:25.387" endtime="20190824 19:47:25.439"></status>
+</kw>
+<status status="PASS" starttime="20190824 19:47:25.367" endtime="20190824 19:47:25.439"></status>
+</kw>
+<kw name="${i} = 8" type="foritem">
+<kw name="Get Text" library="SeleniumLibrary">
+<doc>Returns the text value of element identified by ``locator``.</doc>
+<arguments>
+<arg>id=ui-id-1</arg>
+</arguments>
+<assign>
+<var>${szoveg}</var>
+</assign>
+<msg timestamp="20190824 19:47:25.459" level="INFO">${szoveg} = </msg>
+<status status="PASS" starttime="20190824 19:47:25.439" endtime="20190824 19:47:25.459"></status>
+</kw>
+<kw name="Should Be True" library="BuiltIn">
+<doc>Fails if the given condition is not true.</doc>
+<arguments>
+<arg>"${szoveg}"!="HIBA!"</arg>
+</arguments>
+<status status="PASS" starttime="20190824 19:47:25.459" endtime="20190824 19:47:25.459"></status>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>50milliseconds</arg>
+</arguments>
+<msg timestamp="20190824 19:47:25.511" level="INFO">Slept 50 milliseconds</msg>
+<status status="PASS" starttime="20190824 19:47:25.459" endtime="20190824 19:47:25.511"></status>
+</kw>
+<status status="PASS" starttime="20190824 19:47:25.439" endtime="20190824 19:47:25.511"></status>
+</kw>
+<kw name="${i} = 9" type="foritem">
+<kw name="Get Text" library="SeleniumLibrary">
+<doc>Returns the text value of element identified by ``locator``.</doc>
+<arguments>
+<arg>id=ui-id-1</arg>
+</arguments>
+<assign>
+<var>${szoveg}</var>
+</assign>
+<msg timestamp="20190824 19:47:25.531" level="INFO">${szoveg} = </msg>
+<status status="PASS" starttime="20190824 19:47:25.511" endtime="20190824 19:47:25.531"></status>
+</kw>
+<kw name="Should Be True" library="BuiltIn">
+<doc>Fails if the given condition is not true.</doc>
+<arguments>
+<arg>"${szoveg}"!="HIBA!"</arg>
+</arguments>
+<status status="PASS" starttime="20190824 19:47:25.531" endtime="20190824 19:47:25.531"></status>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>50milliseconds</arg>
+</arguments>
+<msg timestamp="20190824 19:47:25.583" level="INFO">Slept 50 milliseconds</msg>
+<status status="PASS" starttime="20190824 19:47:25.531" endtime="20190824 19:47:25.583"></status>
+</kw>
+<status status="PASS" starttime="20190824 19:47:25.511" endtime="20190824 19:47:25.583"></status>
+</kw>
+<kw name="${i} = 10" type="foritem">
+<kw name="Get Text" library="SeleniumLibrary">
+<doc>Returns the text value of element identified by ``locator``.</doc>
+<arguments>
+<arg>id=ui-id-1</arg>
+</arguments>
+<assign>
+<var>${szoveg}</var>
+</assign>
+<msg timestamp="20190824 19:47:25.603" level="INFO">${szoveg} = </msg>
+<status status="PASS" starttime="20190824 19:47:25.583" endtime="20190824 19:47:25.603"></status>
+</kw>
+<kw name="Should Be True" library="BuiltIn">
+<doc>Fails if the given condition is not true.</doc>
+<arguments>
+<arg>"${szoveg}"!="HIBA!"</arg>
+</arguments>
+<status status="PASS" starttime="20190824 19:47:25.603" endtime="20190824 19:47:25.603"></status>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>50milliseconds</arg>
+</arguments>
+<msg timestamp="20190824 19:47:25.655" level="INFO">Slept 50 milliseconds</msg>
+<status status="PASS" starttime="20190824 19:47:25.603" endtime="20190824 19:47:25.655"></status>
+</kw>
+<status status="PASS" starttime="20190824 19:47:25.583" endtime="20190824 19:47:25.655"></status>
+</kw>
+<kw name="${i} = 11" type="foritem">
+<kw name="Get Text" library="SeleniumLibrary">
+<doc>Returns the text value of element identified by ``locator``.</doc>
+<arguments>
+<arg>id=ui-id-1</arg>
+</arguments>
+<assign>
+<var>${szoveg}</var>
+</assign>
+<msg timestamp="20190824 19:47:25.675" level="INFO">${szoveg} = </msg>
+<status status="PASS" starttime="20190824 19:47:25.655" endtime="20190824 19:47:25.675"></status>
+</kw>
+<kw name="Should Be True" library="BuiltIn">
+<doc>Fails if the given condition is not true.</doc>
+<arguments>
+<arg>"${szoveg}"!="HIBA!"</arg>
+</arguments>
+<status status="PASS" starttime="20190824 19:47:25.675" endtime="20190824 19:47:25.675"></status>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>50milliseconds</arg>
+</arguments>
+<msg timestamp="20190824 19:47:25.727" level="INFO">Slept 50 milliseconds</msg>
+<status status="PASS" starttime="20190824 19:47:25.675" endtime="20190824 19:47:25.727"></status>
+</kw>
+<status status="PASS" starttime="20190824 19:47:25.655" endtime="20190824 19:47:25.727"></status>
+</kw>
+<kw name="${i} = 12" type="foritem">
+<kw name="Get Text" library="SeleniumLibrary">
+<doc>Returns the text value of element identified by ``locator``.</doc>
+<arguments>
+<arg>id=ui-id-1</arg>
+</arguments>
+<assign>
+<var>${szoveg}</var>
+</assign>
+<msg timestamp="20190824 19:47:25.747" level="INFO">${szoveg} = </msg>
+<status status="PASS" starttime="20190824 19:47:25.727" endtime="20190824 19:47:25.747"></status>
+</kw>
+<kw name="Should Be True" library="BuiltIn">
+<doc>Fails if the given condition is not true.</doc>
+<arguments>
+<arg>"${szoveg}"!="HIBA!"</arg>
+</arguments>
+<status status="PASS" starttime="20190824 19:47:25.747" endtime="20190824 19:47:25.747"></status>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>50milliseconds</arg>
+</arguments>
+<msg timestamp="20190824 19:47:25.803" level="INFO">Slept 50 milliseconds</msg>
+<status status="PASS" starttime="20190824 19:47:25.747" endtime="20190824 19:47:25.803"></status>
+</kw>
+<status status="PASS" starttime="20190824 19:47:25.727" endtime="20190824 19:47:25.803"></status>
+</kw>
+<kw name="${i} = 13" type="foritem">
+<kw name="Get Text" library="SeleniumLibrary">
+<doc>Returns the text value of element identified by ``locator``.</doc>
+<arguments>
+<arg>id=ui-id-1</arg>
+</arguments>
+<assign>
+<var>${szoveg}</var>
+</assign>
+<msg timestamp="20190824 19:47:25.827" level="INFO">${szoveg} = </msg>
+<status status="PASS" starttime="20190824 19:47:25.803" endtime="20190824 19:47:25.827"></status>
+</kw>
+<kw name="Should Be True" library="BuiltIn">
+<doc>Fails if the given condition is not true.</doc>
+<arguments>
+<arg>"${szoveg}"!="HIBA!"</arg>
+</arguments>
+<status status="PASS" starttime="20190824 19:47:25.827" endtime="20190824 19:47:25.827"></status>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>50milliseconds</arg>
+</arguments>
+<msg timestamp="20190824 19:47:25.879" level="INFO">Slept 50 milliseconds</msg>
+<status status="PASS" starttime="20190824 19:47:25.827" endtime="20190824 19:47:25.879"></status>
+</kw>
+<status status="PASS" starttime="20190824 19:47:25.803" endtime="20190824 19:47:25.879"></status>
+</kw>
+<kw name="${i} = 14" type="foritem">
+<kw name="Get Text" library="SeleniumLibrary">
+<doc>Returns the text value of element identified by ``locator``.</doc>
+<arguments>
+<arg>id=ui-id-1</arg>
+</arguments>
+<assign>
+<var>${szoveg}</var>
+</assign>
+<msg timestamp="20190824 19:47:25.899" level="INFO">${szoveg} = </msg>
+<status status="PASS" starttime="20190824 19:47:25.879" endtime="20190824 19:47:25.899"></status>
+</kw>
+<kw name="Should Be True" library="BuiltIn">
+<doc>Fails if the given condition is not true.</doc>
+<arguments>
+<arg>"${szoveg}"!="HIBA!"</arg>
+</arguments>
+<status status="PASS" starttime="20190824 19:47:25.899" endtime="20190824 19:47:25.899"></status>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>50milliseconds</arg>
+</arguments>
+<msg timestamp="20190824 19:47:25.955" level="INFO">Slept 50 milliseconds</msg>
+<status status="PASS" starttime="20190824 19:47:25.899" endtime="20190824 19:47:25.955"></status>
+</kw>
+<status status="PASS" starttime="20190824 19:47:25.879" endtime="20190824 19:47:25.955"></status>
+</kw>
+<kw name="${i} = 15" type="foritem">
+<kw name="Get Text" library="SeleniumLibrary">
+<doc>Returns the text value of element identified by ``locator``.</doc>
+<arguments>
+<arg>id=ui-id-1</arg>
+</arguments>
+<assign>
+<var>${szoveg}</var>
+</assign>
+<msg timestamp="20190824 19:47:25.979" level="INFO">${szoveg} = </msg>
+<status status="PASS" starttime="20190824 19:47:25.955" endtime="20190824 19:47:25.979"></status>
+</kw>
+<kw name="Should Be True" library="BuiltIn">
+<doc>Fails if the given condition is not true.</doc>
+<arguments>
+<arg>"${szoveg}"!="HIBA!"</arg>
+</arguments>
+<status status="PASS" starttime="20190824 19:47:25.979" endtime="20190824 19:47:25.979"></status>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>50milliseconds</arg>
+</arguments>
+<msg timestamp="20190824 19:47:26.035" level="INFO">Slept 50 milliseconds</msg>
+<status status="PASS" starttime="20190824 19:47:25.979" endtime="20190824 19:47:26.035"></status>
+</kw>
+<status status="PASS" starttime="20190824 19:47:25.955" endtime="20190824 19:47:26.035"></status>
+</kw>
+<kw name="${i} = 16" type="foritem">
+<kw name="Get Text" library="SeleniumLibrary">
+<doc>Returns the text value of element identified by ``locator``.</doc>
+<arguments>
+<arg>id=ui-id-1</arg>
+</arguments>
+<assign>
+<var>${szoveg}</var>
+</assign>
+<msg timestamp="20190824 19:47:26.059" level="INFO">${szoveg} = </msg>
+<status status="PASS" starttime="20190824 19:47:26.035" endtime="20190824 19:47:26.059"></status>
+</kw>
+<kw name="Should Be True" library="BuiltIn">
+<doc>Fails if the given condition is not true.</doc>
+<arguments>
+<arg>"${szoveg}"!="HIBA!"</arg>
+</arguments>
+<status status="PASS" starttime="20190824 19:47:26.059" endtime="20190824 19:47:26.059"></status>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>50milliseconds</arg>
+</arguments>
+<msg timestamp="20190824 19:47:26.110" level="INFO">Slept 50 milliseconds</msg>
+<status status="PASS" starttime="20190824 19:47:26.059" endtime="20190824 19:47:26.110"></status>
+</kw>
+<status status="PASS" starttime="20190824 19:47:26.035" endtime="20190824 19:47:26.110"></status>
+</kw>
+<kw name="${i} = 17" type="foritem">
+<kw name="Get Text" library="SeleniumLibrary">
+<doc>Returns the text value of element identified by ``locator``.</doc>
+<arguments>
+<arg>id=ui-id-1</arg>
+</arguments>
+<assign>
+<var>${szoveg}</var>
+</assign>
+<msg timestamp="20190824 19:47:26.546" level="INFO">${szoveg} = </msg>
+<status status="PASS" starttime="20190824 19:47:26.110" endtime="20190824 19:47:26.546"></status>
+</kw>
+<kw name="Should Be True" library="BuiltIn">
+<doc>Fails if the given condition is not true.</doc>
+<arguments>
+<arg>"${szoveg}"!="HIBA!"</arg>
+</arguments>
+<status status="PASS" starttime="20190824 19:47:26.546" endtime="20190824 19:47:26.546"></status>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>50milliseconds</arg>
+</arguments>
+<msg timestamp="20190824 19:47:26.602" level="INFO">Slept 50 milliseconds</msg>
+<status status="PASS" starttime="20190824 19:47:26.546" endtime="20190824 19:47:26.602"></status>
+</kw>
+<status status="PASS" starttime="20190824 19:47:26.110" endtime="20190824 19:47:26.602"></status>
+</kw>
+<kw name="${i} = 18" type="foritem">
+<kw name="Get Text" library="SeleniumLibrary">
+<doc>Returns the text value of element identified by ``locator``.</doc>
+<arguments>
+<arg>id=ui-id-1</arg>
+</arguments>
+<assign>
+<var>${szoveg}</var>
+</assign>
+<msg timestamp="20190824 19:47:26.622" level="INFO">${szoveg} = </msg>
+<status status="PASS" starttime="20190824 19:47:26.602" endtime="20190824 19:47:26.622"></status>
+</kw>
+<kw name="Should Be True" library="BuiltIn">
+<doc>Fails if the given condition is not true.</doc>
+<arguments>
+<arg>"${szoveg}"!="HIBA!"</arg>
+</arguments>
+<status status="PASS" starttime="20190824 19:47:26.622" endtime="20190824 19:47:26.622"></status>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>50milliseconds</arg>
+</arguments>
+<msg timestamp="20190824 19:47:26.674" level="INFO">Slept 50 milliseconds</msg>
+<status status="PASS" starttime="20190824 19:47:26.622" endtime="20190824 19:47:26.674"></status>
+</kw>
+<status status="PASS" starttime="20190824 19:47:26.602" endtime="20190824 19:47:26.674"></status>
+</kw>
+<kw name="${i} = 19" type="foritem">
+<kw name="Get Text" library="SeleniumLibrary">
+<doc>Returns the text value of element identified by ``locator``.</doc>
+<arguments>
+<arg>id=ui-id-1</arg>
+</arguments>
+<assign>
+<var>${szoveg}</var>
+</assign>
+<msg timestamp="20190824 19:47:26.702" level="INFO">${szoveg} = </msg>
+<status status="PASS" starttime="20190824 19:47:26.674" endtime="20190824 19:47:26.702"></status>
+</kw>
+<kw name="Should Be True" library="BuiltIn">
+<doc>Fails if the given condition is not true.</doc>
+<arguments>
+<arg>"${szoveg}"!="HIBA!"</arg>
+</arguments>
+<status status="PASS" starttime="20190824 19:47:26.702" endtime="20190824 19:47:26.702"></status>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>50milliseconds</arg>
+</arguments>
+<msg timestamp="20190824 19:47:26.754" level="INFO">Slept 50 milliseconds</msg>
+<status status="PASS" starttime="20190824 19:47:26.702" endtime="20190824 19:47:26.754"></status>
+</kw>
+<status status="PASS" starttime="20190824 19:47:26.674" endtime="20190824 19:47:26.754"></status>
+</kw>
+<status status="PASS" starttime="20190824 19:47:24.736" endtime="20190824 19:47:26.754"></status>
+</kw>
+<status status="PASS" starttime="20190824 19:47:24.736" endtime="20190824 19:47:26.754"></status>
+</kw>
+<status status="PASS" starttime="20190824 19:47:23.258" endtime="20190824 19:47:26.754"></status>
+</kw>
+<kw name="Wait the tickets visiable on the page">
+<arguments>
+<arg>${jegyek}</arg>
+</arguments>
+<kw name="Evaluate" library="BuiltIn">
+<doc>Evaluates the given expression in Python and returns the results.</doc>
+<arguments>
+<arg>${jegy} + 1</arg>
+</arguments>
+<assign>
+<var>${jegy2}</var>
+</assign>
+<msg timestamp="20190824 19:47:26.754" level="INFO">${jegy2} = 2</msg>
+<status status="PASS" starttime="20190824 19:47:26.754" endtime="20190824 19:47:26.754"></status>
+</kw>
+<kw name="Wait until page contains count elements3">
+<arguments>
+<arg>${jegy}</arg>
+</arguments>
+<kw name="${i} IN RANGE [ ${timeout} ]" type="for">
+<kw name="${i} = 0" type="foritem">
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>50milliseconds</arg>
+</arguments>
+<msg timestamp="20190824 19:47:26.810" level="INFO">Slept 50 milliseconds</msg>
+<status status="PASS" starttime="20190824 19:47:26.758" endtime="20190824 19:47:26.810"></status>
+</kw>
+<kw name="Get basket text" library="po_mlsz">
+<assign>
+<var>${dbstring}</var>
+</assign>
+<kw name="Get Text" library="SeleniumLibrary">
+<doc>Returns the text value of element identified by ``locator``.</doc>
+<arguments>
+<arg>id=mini-basket-count</arg>
+</arguments>
+<assign>
+<var>${value}</var>
+</assign>
+<msg timestamp="20190824 19:47:26.846" level="INFO">${value} = 1</msg>
+<status status="PASS" starttime="20190824 19:47:26.810" endtime="20190824 19:47:26.846"></status>
+</kw>
+<msg timestamp="20190824 19:47:26.846" level="INFO">${dbstring} = 1</msg>
+<status status="PASS" starttime="20190824 19:47:26.810" endtime="20190824 19:47:26.846"></status>
+</kw>
+<kw name="Exit For Loop If" library="BuiltIn">
+<doc>Stops executing the enclosing for loop if the ``condition`` is true.</doc>
+<arguments>
+<arg>${dbstring}==${db}</arg>
+</arguments>
+<msg timestamp="20190824 19:47:26.846" level="INFO">Exiting for loop altogether.</msg>
+<status status="PASS" starttime="20190824 19:47:26.846" endtime="20190824 19:47:26.846"></status>
+</kw>
+<status status="PASS" starttime="20190824 19:47:26.758" endtime="20190824 19:47:26.846"></status>
+</kw>
+<status status="PASS" starttime="20190824 19:47:26.758" endtime="20190824 19:47:26.846"></status>
+</kw>
+<status status="PASS" starttime="20190824 19:47:26.754" endtime="20190824 19:47:26.846"></status>
+</kw>
+<status status="PASS" starttime="20190824 19:47:26.754" endtime="20190824 19:47:26.846"></status>
+</kw>
+<kw name="Scroll to the kosarhoz button and push" library="mlsz_resource">
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>1s</arg>
+</arguments>
+<msg timestamp="20190824 19:47:27.852" level="INFO">Slept 1 second</msg>
+<status status="PASS" starttime="20190824 19:47:26.850" endtime="20190824 19:47:27.852"></status>
+</kw>
+<kw name="Scroll to the bastket button" library="po_mlsz">
+<kw name="Scroll to element" library="mlsz_resource">
+<arguments>
+<arg>${PO_MLSZ_BASKET_BUTTON_ID}</arg>
+<arg>300</arg>
+</arguments>
+<kw name="Get Vertical Position" library="SeleniumLibrary">
+<doc>Returns vertical position of element identified by ``locator``.</doc>
+<arguments>
+<arg>${element}</arg>
+</arguments>
+<assign>
+<var>${x}</var>
+</assign>
+<msg timestamp="20190824 19:47:27.884" level="INFO">${x} = 824</msg>
+<status status="PASS" starttime="20190824 19:47:27.852" endtime="20190824 19:47:27.884"></status>
+</kw>
+<kw name="Windows Scroll" library="alap">
+<arguments>
+<arg>${x}</arg>
+<arg>${y}</arg>
+</arguments>
+<assign>
+<var>${x2}</var>
+</assign>
+<msg timestamp="20190824 19:47:27.884" level="INFO">${x2} = window.scrollTo(0,524)</msg>
+<status status="PASS" starttime="20190824 19:47:27.884" endtime="20190824 19:47:27.884"></status>
+</kw>
+<kw name="Log" library="BuiltIn">
+<doc>Logs the given message with the given level.</doc>
+<arguments>
+<arg>${x2}</arg>
+</arguments>
+<msg timestamp="20190824 19:47:27.884" level="INFO">window.scrollTo(0,524)</msg>
+<status status="PASS" starttime="20190824 19:47:27.884" endtime="20190824 19:47:27.884"></status>
+</kw>
+<kw name="Execute Javascript" library="SeleniumLibrary">
+<doc>Executes the given JavaScript code with possible arguments.</doc>
+<arguments>
+<arg>${x2}</arg>
+</arguments>
+<msg timestamp="20190824 19:47:27.888" level="INFO">Executing JavaScript:
+window.scrollTo(0,524)
+Without any arguments.</msg>
+<status status="PASS" starttime="20190824 19:47:27.884" endtime="20190824 19:47:27.896"></status>
+</kw>
+<status status="PASS" starttime="20190824 19:47:27.852" endtime="20190824 19:47:27.896"></status>
+</kw>
+<status status="PASS" starttime="20190824 19:47:27.852" endtime="20190824 19:47:27.896"></status>
+</kw>
+<kw name="Click the basket button" library="po_mlsz">
+<kw name="Click Element" library="SeleniumLibrary">
+<doc>Click element identified by ``locator``.</doc>
+<arguments>
+<arg>${PO_MLSZ_BASKET_BUTTON_ID}</arg>
+</arguments>
+<msg timestamp="20190824 19:47:27.896" level="INFO">Clicking element '//*[@class="button margin-left-0 toBasket"]'.</msg>
+<status status="PASS" starttime="20190824 19:47:27.896" endtime="20190824 19:47:28.719"></status>
+</kw>
+<status status="PASS" starttime="20190824 19:47:27.896" endtime="20190824 19:47:28.719"></status>
+</kw>
+<status status="PASS" starttime="20190824 19:47:26.846" endtime="20190824 19:47:28.719"></status>
+</kw>
+<kw name="Assign the name for the ticket">
+<kw name="Get WebElements" library="SeleniumLibrary">
+<doc>Returns list of WebElement objects matching the ``locator``.</doc>
+<arguments>
+<arg>xpath=//*[contains(@class,"assign_to")]</arg>
+</arguments>
+<assign>
+<var>@{assign_buttons}</var>
+</assign>
+<msg timestamp="20190824 19:47:28.759" level="INFO">@{assign_buttons} = [ &lt;selenium.webdriver.remote.webelement.WebElement (session="31fd8ca4d76ad969f5d205972997d722", element="9876ae63-ad32-4b3c-811c-542b6965947b")&gt; ]</msg>
+<status status="PASS" starttime="20190824 19:47:28.723" endtime="20190824 19:47:28.759"></status>
+</kw>
+<kw name="Get Length" library="BuiltIn">
+<doc>Returns and logs the length of the given item as an integer.</doc>
+<arguments>
+<arg>${assign_buttons}</arg>
+</arguments>
+<assign>
+<var>${hossz}</var>
+</assign>
+<msg timestamp="20190824 19:47:28.759" level="INFO">Length is 1</msg>
+<msg timestamp="20190824 19:47:28.759" level="INFO">${hossz} = 1</msg>
+<status status="PASS" starttime="20190824 19:47:28.759" endtime="20190824 19:47:28.759"></status>
+</kw>
+<kw name="Log" library="BuiltIn">
+<doc>Logs the given message with the given level.</doc>
+<arguments>
+<arg>${hossz}</arg>
+</arguments>
+<msg timestamp="20190824 19:47:28.759" level="INFO">1</msg>
+<status status="PASS" starttime="20190824 19:47:28.759" endtime="20190824 19:47:28.759"></status>
+</kw>
+<kw name="${button} IN [ @{assign_buttons} ]" type="for">
+<kw name="${button} = &lt;selenium.webdriver.remote.webelement.WebElement (session=&quot;31fd8ca4d76ad969f5d205972997d722&quot;, element=&quot;9876ae63-ad32-4b3c-811c-542b6965947b&quot;)&gt;" type="foritem">
+<kw name="Click Element" library="SeleniumLibrary">
+<doc>Click element identified by ``locator``.</doc>
+<arguments>
+<arg>${button}</arg>
+</arguments>
+<msg timestamp="20190824 19:47:28.759" level="INFO">Clicking element '&lt;selenium.webdriver.remote.webelement.WebElement (session="31fd8ca4d76ad969f5d205972997d722", element="9876ae63-ad32-4b3c-811c-542b6965947b")&gt;'.</msg>
+<status status="PASS" starttime="20190824 19:47:28.759" endtime="20190824 19:47:28.939"></status>
+</kw>
+<status status="PASS" starttime="20190824 19:47:28.759" endtime="20190824 19:47:28.939"></status>
+</kw>
+<status status="PASS" starttime="20190824 19:47:28.759" endtime="20190824 19:47:28.939"></status>
+</kw>
+<status status="PASS" starttime="20190824 19:47:28.719" endtime="20190824 19:47:28.939"></status>
+</kw>
+<kw name="Push the tovabb button on the bastket page" library="po_mlsz">
+<kw name="Click Element" library="SeleniumLibrary">
+<doc>Click element identified by ``locator``.</doc>
+<arguments>
+<arg>${PO_MLSZ_CHECKOUT_BUTTON_ID}</arg>
+</arguments>
+<msg timestamp="20190824 19:47:28.943" level="INFO">Clicking element 'id=btnCheckout'.</msg>
+<kw name="Capture Page Screenshot" library="SeleniumLibrary">
+<doc>Takes screenshot of the current page and embeds it into log file.</doc>
+<msg timestamp="20190824 19:47:29.554" level="INFO" html="yes">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-2.png"&gt;&lt;img src="selenium-screenshot-2.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20190824 19:47:29.027" endtime="20190824 19:47:29.554"></status>
+</kw>
+<msg timestamp="20190824 19:47:29.558" level="FAIL">ElementClickInterceptedException: Message: element click intercepted: Element &lt;button type="button" id="btnCheckout" class="button disabled small-expanded" data-toggle="" disabled=""&gt;...&lt;/button&gt; is not clickable at point (1162, 547). Other element would receive the click: &lt;div class="row collapse"&gt;...&lt;/div&gt;
+  (Session info: chrome=76.0.3809.100)
+</msg>
+<status status="FAIL" starttime="20190824 19:47:28.943" endtime="20190824 19:47:29.558"></status>
+</kw>
+<status status="FAIL" starttime="20190824 19:47:28.943" endtime="20190824 19:47:29.558"></status>
+</kw>
+<kw name="Finish the test" type="teardown">
+<kw name="Get Current Date" library="DateTime">
+<doc>Returns current local or UTC time with an optional increment.</doc>
+<arguments>
+<arg>result_format=%Y%m%d_%H%M%S%f</arg>
+</arguments>
+<assign>
+<var>${ido}</var>
+</assign>
+<msg timestamp="20190824 19:47:29.562" level="INFO">${ido} = 20190824_194729561914</msg>
+<status status="PASS" starttime="20190824 19:47:29.562" endtime="20190824 19:47:29.562"></status>
+</kw>
+<kw name="Create File" library="OperatingSystem">
+<doc>Creates a file with the given content and encoding.</doc>
+<arguments>
+<arg>Results/result_data/${ido}_${TEST STATUS}</arg>
+<arg>${TEST STATUS}_${TEST MESSAGE}_${REPORT FILE}</arg>
+</arguments>
+<msg timestamp="20190824 19:47:29.566" level="INFO" html="yes">Created file '&lt;a href="file://C:\jmeter_mlsz\Results\result_data\20190824_194729561914_FAIL"&gt;C:\jmeter_mlsz\Results\result_data\20190824_194729561914_FAIL&lt;/a&gt;'.</msg>
+<status status="PASS" starttime="20190824 19:47:29.562" endtime="20190824 19:47:29.566"></status>
+</kw>
+<kw name="Create File" library="OperatingSystem">
+<doc>Creates a file with the given content and encoding.</doc>
+<arguments>
+<arg>${PATH}${ido}_${TEST STATUS}</arg>
+<arg>${TEST STATUS}_${TEST MESSAGE}_${REPORT FILE}</arg>
+</arguments>
+<msg timestamp="20190824 19:47:29.566" level="INFO" html="yes">Created file '&lt;a href="file://C:\development\mlsz\Results\result_data\20190824_194729561914_FAIL"&gt;C:\development\mlsz\Results\result_data\20190824_194729561914_FAIL&lt;/a&gt;'.</msg>
+<status status="PASS" starttime="20190824 19:47:29.566" endtime="20190824 19:47:29.566"></status>
+</kw>
+<kw name="Close Browser" library="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" starttime="20190824 19:47:29.566" endtime="20190824 19:47:31.905"></status>
+</kw>
+<status status="PASS" starttime="20190824 19:47:29.562" endtime="20190824 19:47:31.905"></status>
+</kw>
+<tags>
+<tag>most</tag>
+</tags>
+<status status="FAIL" starttime="20190824 19:47:15.196" endtime="20190824 19:47:31.905" critical="yes">ElementClickInterceptedException: Message: element click intercepted: Element &lt;button type="button" id="btnCheckout" class="button disabled small-expanded" data-toggle="" disabled=""&gt;...&lt;/button&gt; is not clickable at point (1162, 547). Other element would receive the click: &lt;div class="row collapse"&gt;...&lt;/div&gt;
+  (Session info: chrome=76.0.3809.100)
+</status>
+</test>
+<status status="FAIL" starttime="20190824 19:47:14.860" endtime="20190824 19:47:31.909"></status>
+</suite>
+<statistics>
+<total>
+<stat pass="0" fail="1">Critical Tests</stat>
+<stat pass="0" fail="1">All Tests</stat>
+</total>
+<tag>
+<stat pass="0" fail="1">most</stat>
+</tag>
+<suite>
+<stat pass="0" fail="1" id="s1" name="Mlsz">Mlsz</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>

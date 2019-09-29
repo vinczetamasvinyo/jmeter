@@ -1,0 +1,3 @@
+FAIL_ElementClickInterceptedException: Message: element click intercepted: Element <button type="button" id="btnCheckout" class="button disabled small-expanded" data-toggle="" disabled="">...</button> is not clickable at point (1162, 547). Other element would receive the click: <div class="row collapse">...</div>
+  (Session info: chrome=76.0.3809.100)
+_C:\jmeter_mlsz\Results\valami2\20192408_194714_832068__13263635591.html

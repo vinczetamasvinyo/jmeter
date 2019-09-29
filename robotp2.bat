@@ -1,0 +1,1 @@
+robot -d C:/development/mlsz/results/mlsz -T -i most C:/development/mlsz/Tests/mlsz.robot
